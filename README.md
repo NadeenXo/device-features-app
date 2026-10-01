@@ -59,6 +59,21 @@ screenshots/
 Each screen and reusable device-feature helper is kept in a separate Dart file.
 
 ---
+## Home Screen
+
+The app includes a home screen that provides navigation to all implemented device features:
+
+- Device Info
+- Image Gallery
+- Google Map
+- Audio Recorder
+- Biometric Profile Access
+
+The profile icon in the AppBar opens biometric authentication before allowing access to the profile page.
+
+![Home Screen](screenshots/Screenshot_20261001-165904.jpg)
+
+---
 
 ## Phase 1 — Device Info
 
@@ -108,22 +123,11 @@ flutter pub add image_picker
 
 No additional Android runtime permission is required for the gallery picker used in this project.
 
-### iOS Permission
-
-Add the following to:
-
-```text
-ios/Runner/Info.plist
-```
-
-```xml
-<key>NSPhotoLibraryUsageDescription</key>
-<string>This app needs access to the photo library so users can select images.</string>
-```
-
 ### Screenshots
 
 ![Image Gallery](screenshots/Screenshot%202026-09-30%20201425.png)
+
+![Image Gallery](screenshots/Screenshot_20261001-170301.jpg)
 
 ![Android Photo Picker](screenshots/Screenshot%202026-09-30%20201448.png)
 
@@ -312,6 +316,8 @@ android/app/src/main/AndroidManifest.xml
 ```xml
 <uses-permission android:name="android.permission.USE_BIOMETRIC" />
 <uses-permission android:name="android.permission.RECORD_AUDIO" />
+<uses-permission android:name="android.permission.INTERNET" />
+
 ```
 
 Google Maps also requires a valid Google Maps API key configured in the Android application.
@@ -330,18 +336,6 @@ The project follows the required code-quality guidelines:
 - Unused code is removed before submission
 - Dart files are formatted before submission
 
-Format the project with:
-
-```bash
-dart format .
-```
-
-Check the project for issues using:
-
-```bash
-flutter analyze
-```
-
 ---
 
 ## Running the Project
@@ -352,29 +346,9 @@ Install project dependencies:
 flutter pub get
 ```
 
-Check available devices:
-
-```bash
-flutter devices
-```
-
 Run the app:
 
 ```bash
-flutter run
-```
-
----
-
-## Final Check Before Submission
-
-Run:
-
-```bash
-dart format .
-flutter analyze
-flutter clean
-flutter pub get
 flutter run
 ```
 
@@ -384,5 +358,5 @@ flutter run
 Public GitHub Repository:
 
 ```text
-
+https://github.com/NadeenXo/device-features-app.git
 ```

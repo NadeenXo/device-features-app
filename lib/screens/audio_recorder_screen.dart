@@ -18,8 +18,7 @@ class _AudioRecorderScreenState extends State<AudioRecorderScreen> {
   // Starts or stops voice recording depending on the current state.
   Future<void> _toggleRecording() async {
     if (_isRecording) {
-      final String? recordingPath =
-          await _audioService.stopRecording();
+      final String? recordingPath = await _audioService.stopRecording();
 
       setState(() {
         _isRecording = false;
@@ -41,9 +40,7 @@ class _AudioRecorderScreenState extends State<AudioRecorderScreen> {
       });
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('Microphone permission is required.'),
-        ),
+        const SnackBar(content: Text('Microphone permission is required.')),
       );
     }
   }
@@ -61,34 +58,22 @@ class _AudioRecorderScreenState extends State<AudioRecorderScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Audio Recorder'),
-        centerTitle: true,
-      ),
+      appBar: AppBar(title: const Text('Audio Recorder'), centerTitle: true),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(24),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(
-                _isRecording ? Icons.mic : Icons.mic_none,
-                size: 80,
-              ),
+              Icon(_isRecording ? Icons.mic : Icons.mic_none, size: 80),
               const SizedBox(height: 30),
 
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton.icon(
                   onPressed: _toggleRecording,
-                  icon: Icon(
-                    _isRecording ? Icons.stop : Icons.mic,
-                  ),
-                  label: Text(
-                    _isRecording
-                        ? 'Stop Recording'
-                        : 'Record Audio',
-                  ),
+                  icon: Icon(_isRecording ? Icons.stop : Icons.mic),
+                  label: Text(_isRecording ? 'Stop Recording' : 'Record Audio'),
                 ),
               ),
 

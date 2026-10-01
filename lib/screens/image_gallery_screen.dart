@@ -19,8 +19,8 @@ class _ImageGalleryScreenState extends State<ImageGalleryScreen> {
 
   // Gets multiple images from the device gallery and displays them in the list.
   Future<void> _pickImages() async {
-    final List<XFile> pickedImages =
-        await _imagePickerService.pickMultipleImages();
+    final List<XFile> pickedImages = await _imagePickerService
+        .pickMultipleImages();
 
     if (pickedImages.isEmpty) {
       return;
@@ -34,10 +34,7 @@ class _ImageGalleryScreenState extends State<ImageGalleryScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Image Gallery'),
-        centerTitle: true,
-      ),
+      appBar: AppBar(title: const Text('Image Gallery'), centerTitle: true),
       body: SafeArea(
         child: Column(
           children: [

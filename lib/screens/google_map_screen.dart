@@ -5,10 +5,7 @@ class GoogleMapScreen extends StatelessWidget {
   const GoogleMapScreen({super.key});
 
   // Coordinates for Cairo Governorate, Egypt.
-  static const LatLng cairoLocation = LatLng(
-    30.0444,
-    31.2357,
-  );
+  static const LatLng cairoLocation = LatLng(30.0444, 31.2357);
 
   @override
   Widget build(BuildContext context) {
@@ -24,10 +21,7 @@ class GoogleMapScreen extends StatelessWidget {
     };
 
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Google Map'),
-        centerTitle: true,
-      ),
+      appBar: AppBar(title: const Text('Google Map'), centerTitle: true),
       body: GoogleMap(
         initialCameraPosition: const CameraPosition(
           target: cairoLocation,

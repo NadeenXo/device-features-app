@@ -25,8 +25,7 @@ class _DeviceInfoScreenState extends State<DeviceInfoScreen> {
     final DeviceInfoPlugin deviceInfoPlugin = DeviceInfoPlugin();
 
     if (Platform.isAndroid) {
-      final AndroidDeviceInfo androidInfo =
-          await deviceInfoPlugin.androidInfo;
+      final AndroidDeviceInfo androidInfo = await deviceInfoPlugin.androidInfo;
 
       setState(() {
         deviceModel = androidInfo.model;
@@ -45,20 +44,14 @@ class _DeviceInfoScreenState extends State<DeviceInfoScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Device Info'),
-        centerTitle: true,
-      ),
+      appBar: AppBar(title: const Text('Device Info'), centerTitle: true),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
               'Device Model: $deviceModel',
-              style: const TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-              ),
+              style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 16),

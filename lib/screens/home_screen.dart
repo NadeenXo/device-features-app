@@ -24,26 +24,17 @@ class HomeScreen extends StatelessWidget {
     if (authenticated) {
       Navigator.push(
         context,
-        MaterialPageRoute(
-          builder: (context) => const ProfileScreen(),
-        ),
+        MaterialPageRoute(builder: (context) => const ProfileScreen()),
       );
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('Biometric authentication failed.'),
-        ),
+        const SnackBar(content: Text('Biometric authentication failed.')),
       );
     }
   }
 
   void _openScreen(BuildContext context, Widget screen) {
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => screen,
-      ),
-    );
+    Navigator.push(context, MaterialPageRoute(builder: (context) => screen));
   }
 
   @override
@@ -66,18 +57,12 @@ class HomeScreen extends StatelessWidget {
           children: [
             const Text(
               'Device Features App',
-              style: TextStyle(
-                fontSize: 28,
-                fontWeight: FontWeight.bold,
-              ),
+              style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 8),
             const Text(
               'Explore native device capabilities.',
-              style: TextStyle(
-                fontSize: 16,
-                color: Colors.grey,
-              ),
+              style: TextStyle(fontSize: 16, color: Colors.grey),
             ),
             const SizedBox(height: 28),
 
@@ -85,40 +70,28 @@ class HomeScreen extends StatelessWidget {
               title: 'Device Info',
               subtitle: 'View device model and OS version',
               icon: Icons.phone_android,
-              onTap: () => _openScreen(
-                context,
-                const DeviceInfoScreen(),
-              ),
+              onTap: () => _openScreen(context, const DeviceInfoScreen()),
             ),
 
             FeatureCard(
               title: 'Image Gallery',
               subtitle: 'Pick multiple images from your gallery',
               icon: Icons.photo_library,
-              onTap: () => _openScreen(
-                context,
-                const ImageGalleryScreen(),
-              ),
+              onTap: () => _openScreen(context, const ImageGalleryScreen()),
             ),
 
             FeatureCard(
               title: 'Google Map',
               subtitle: 'View Cairo on Google Maps',
               icon: Icons.map,
-              onTap: () => _openScreen(
-                context,
-                const GoogleMapScreen(),
-              ),
+              onTap: () => _openScreen(context, const GoogleMapScreen()),
             ),
 
             FeatureCard(
               title: 'Audio Recorder',
               subtitle: 'Record and play back your voice',
               icon: Icons.mic,
-              onTap: () => _openScreen(
-                context,
-                const AudioRecorderScreen(),
-              ),
+              onTap: () => _openScreen(context, const AudioRecorderScreen()),
             ),
           ],
         ),

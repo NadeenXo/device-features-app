@@ -9,8 +9,7 @@ class BiometricService {
       final bool canUseBiometrics =
           await _localAuthentication.canCheckBiometrics;
 
-      final bool isSupported =
-          await _localAuthentication.isDeviceSupported();
+      final bool isSupported = await _localAuthentication.isDeviceSupported();
 
       if (!canUseBiometrics || !isSupported) {
         return false;

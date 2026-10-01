@@ -21,10 +21,7 @@ class AudioService {
     final directory = await getApplicationDocumentsDirectory();
     final String filePath = '${directory.path}/voice_recording.m4a';
 
-    await _audioRecorder.start(
-      const RecordConfig(),
-      path: filePath,
-    );
+    await _audioRecorder.start(const RecordConfig(), path: filePath);
 
     return true;
   }
@@ -41,9 +38,7 @@ class AudioService {
       return;
     }
 
-    await _audioPlayer.play(
-      DeviceFileSource(_recordedFilePath!),
-    );
+    await _audioPlayer.play(DeviceFileSource(_recordedFilePath!));
   }
 
   void dispose() {

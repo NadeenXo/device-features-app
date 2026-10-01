@@ -20,16 +20,8 @@ class FeatureCard extends StatelessWidget {
       margin: const EdgeInsets.only(bottom: 16),
       child: ListTile(
         contentPadding: const EdgeInsets.all(16),
-        leading: CircleAvatar(
-          radius: 28,
-          child: Icon(icon),
-        ),
-        title: Text(
-          title,
-          style: const TextStyle(
-            fontWeight: FontWeight.bold,
-          ),
-        ),
+        leading: CircleAvatar(radius: 28, child: Icon(icon)),
+        title: Text(title, style: const TextStyle(fontWeight: FontWeight.bold)),
         subtitle: Padding(
           padding: const EdgeInsets.only(top: 4),
           child: Text(subtitle),
